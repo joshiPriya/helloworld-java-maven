@@ -41,15 +41,15 @@
 <distributionManagement>
 	<repository>
 		<id>tata</id>
-		<name>Internal Releases</name>
-		<url>http://192.168.12.151:8081/repository/ncodeit/</url>
+		<name>maven-release</name>
+		<url>http://10.100.90.206:8081/repository/my-nexus/</url>
 	</repository>
  
-	<snapshotRepository>
+<!-- 	<snapshotRepository>
 		<id>tata</id>
 		<name>Internal Releases</name>
 		<url>http://192.168.12.151:8081/repository/ncodeit/</url>
-	</snapshotRepository>
+	</snapshotRepository> -->
 
 </distributionManagement>
 <!-- hello -->

@@ -42,7 +42,7 @@
 	<repository>
 		<id>deployment</id>
 		<name>maven release repo</name>
-		<url>http://10.100.90.206:8081/repository/my-nexus/</url>
+		<url>http://10.100.90.206:8081/repository/Sample-nexus-web-jar-deploy/</url>
 	</repository>
  
 <!-- 	<snapshotRepository>

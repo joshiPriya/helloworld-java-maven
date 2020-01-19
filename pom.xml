@@ -40,7 +40,7 @@
   
 <distributionManagement>
 	<repository>
-		<id>tata</id>
+		<id>maven-release</id>
 		<name>maven-release</name>
 		<url>http://10.100.90.206:8081/repository/web-maven/</url>
 	</repository>

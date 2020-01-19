@@ -42,7 +42,7 @@
 	<repository>
 		<id>tata</id>
 		<name>maven-release</name>
-		<url>http://10.100.90.206:8081/repository/my-nexus/</url>
+		<url>http://10.100.90.206:8081/repository/web-maven/</url>
 	</repository>
  
 <!-- 	<snapshotRepository>

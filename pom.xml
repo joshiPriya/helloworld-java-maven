@@ -41,8 +41,8 @@
 <distributionManagement>
 	<repository>
 		<id>maven-release</id>
-		<name>maven-release</name>
-		<url>http://10.100.90.206:8081/repository/web-maven/</url>
+		<name>maven release repo</name>
+		<url>http://10.100.90.206:8081/repository/sample-REL/</url>
 	</repository>
  
 <!-- 	<snapshotRepository>

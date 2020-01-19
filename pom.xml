@@ -42,7 +42,7 @@
 	<repository>
 		<id>deployment</id>
 		<name>maven release repo</name>
-		<url>http://10.100.90.206:8081/repository/sample-REL/</url>
+		<url>http://10.100.90.206:8081/repository/my-nexus/</url>
 	</repository>
  
 <!-- 	<snapshotRepository>

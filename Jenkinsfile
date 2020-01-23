@@ -5,6 +5,7 @@ node {
 
 stage('compile-package')
 {
+ def mvnhome = tool name: 'maven3', type: 'maven'	
     sh "mvn deploy"
 
 }

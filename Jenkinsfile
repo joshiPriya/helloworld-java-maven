@@ -3,7 +3,7 @@ node {
 	git 'https://github.com/joshiPriya/helloworld-java-maven.git'
 }
 stage('SonarQube Analysis') {
-  def mvnHome =  tool name: 'maven-3', type: 'maven'
+  def mvnHome =  tool name: 'maven3', type: 'maven'
   withSonarQubeEnv('sonar') { 
   sh "${mvnHome}/bin/mvn sonar:sonar"
         }

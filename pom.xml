@@ -55,7 +55,7 @@
     
 	</plugins>
 	  
-	  <pluginManagement>
+<!-- 	  <pluginManagement>
  <plugins>
   <plugin>
    <groupId>org.codehaus.mojo</groupId>
@@ -63,7 +63,7 @@
    <version>2.6</version>
   </plugin>
  </plugins>
-</pluginManagement>
+</pluginManagement> -->
 	  
 	</build>
 	

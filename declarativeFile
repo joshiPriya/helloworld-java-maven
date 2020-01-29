@@ -1,10 +1,22 @@
 pipeline { 
     agent any  
+    tools { 
+        maven 'maven3' 
+        jdk 'java' 
+    }
+    
+   
     stages { 
         stage('Build') { 
             steps { 
                echo 'This is check.' 
             }
         }
+         stage ('Build') {
+            steps {
+                sh 'mvn deploy' 
+            }
+          }
+          }
     }
 }

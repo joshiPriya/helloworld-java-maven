@@ -1,10 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.scmgalaxy.mavensample</groupId>
-  <artifactId>yoodle</artifactId>
+  <groupId>com.org.etisalatpoc</groupId>
+  <artifactId>srcumpoc</artifactId>
   <packaging>jar</packaging>
-  <version>5.0.0-${BUILD_NUMBER}</version>
+  <version>4.0.0</version>
   <name>my-maven</name>
   <url>http://maven.apache.org</url>
 	
@@ -35,26 +35,38 @@
 				</execution>
 			</executions>
 		</plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>1.7</source>
+                <target>1.7</target>
+            </configuration>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+        </plugin>
+    
 	</plugins>
-	</build>
+	 
+</build>
+	
+
   
 <distributionManagement>
-    <repository>
-        <id>sym</id>
-        <name>release softx</name>
-        <url>http://52.66.212.86:8081/repository/rajesh/</url>
-    </repository>
-    <snapshotRepository>
-        <id>sym</id>
-        <name>snapshot softx</name>
-        <url>http://52.66.212.86:8081/repository/rajesh/</url>
-    </snapshotRepository>
+	<repository>
+		<id>ppesscrumuser</id>
+		<name>maven release repo</name>
+		<url>http://10.100.90.206:8081/repository/Sample-nexus-web-jar-deploy/</url>
+	</repository>
+ 
+ 	<snapshotRepository>
+		<id>ppesscrumuser1</id>
+		<name>Internal Releases</name>
+		<url>http://10.100.90.206:8081/repository/maven-snapshot/</url>
+	</snapshotRepository> 
+
 </distributionManagement>
-
-
-
-
-
-
-
+<!-- hello -->
 </project>

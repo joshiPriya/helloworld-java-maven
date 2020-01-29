@@ -54,7 +54,7 @@
 	
 
   
-<!-- <distributionManagement>
+ <distributionManagement>
 	<repository>
 		<id>ppesscrumuser</id>
 		<name>maven release repo</name>
@@ -67,6 +67,6 @@
 		<url>http://10.100.90.206:8081/repository/maven-snapshot/</url>
 	</snapshotRepository> 
 
-</distributionManagement> -->
+</distributionManagement> 
 <!-- hello -->
 </project>

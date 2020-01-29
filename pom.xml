@@ -1,12 +1,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.scmgalaxy.mavensample</groupId>
-  <artifactId>my-maven</artifactId>
+  <groupId>com.org.etisalatpoc</groupId>
+  <artifactId>srcumpoc</artifactId>
   <packaging>jar</packaging>
-  <version>8.0-SNAPSHOT</version>
+  <version>4.0.0</version>
   <name>my-maven</name>
   <url>http://maven.apache.org</url>
+	
+<properties>
+  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+</properties>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -16,18 +21,52 @@
     </dependency>
   </dependencies>
   
-  <distributionManagement>
-  <repository>
-  <id>deployment</id>
-  <name>Internal Releases1</name>
-  <url>http://54.171.181.80:8081/nexus/content/repositories/cts-hosted-release/</url>
-  </repository>
- 
-  <snapshotRepository>
-<id>deployment</id>
-<name>Internal Releases</name>
-<url>http://54.171.181.80:8081/nexus/content/repositories/cts-hosted-snapshot/</url>
-</snapshotRepository>
-</distributionManagement>
+  <build>
+	<plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-javadoc-plugin</artifactId>
+			<executions>
+				<execution>
+					<id>attach-javadocs</id>
+					<goals>
+						<goal>jar</goal>
+					</goals>
+				</execution>
+			</executions>
+		</plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+                <source>1.7</source>
+                <target>1.7</target>
+            </configuration>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+        </plugin>
+    
+	</plugins>
+	 
+</build>
+	
 
+  
+<distributionManagement>
+	<repository>
+		<id>ppesscrumuser</id>
+		<name>maven release repo</name>
+		<url>http://10.100.90.206:8081/repository/Sample-nexus-web-jar-deploy/</url>
+	</repository>
+ 
+ 	<snapshotRepository>
+		<id>ppesscrumuser1</id>
+		<name>Internal Releases</name>
+		<url>http://10.100.90.206:8081/repository/maven-snapshot/</url>
+	</snapshotRepository> 
+
+</distributionManagement>
+<!-- hello -->
 </project>

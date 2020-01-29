@@ -9,7 +9,7 @@ pipeline {
     stages { 
         stage('check') { 
             steps { 
-               echo 'This is check.' 
+               echo 'Initial check' 
             }
         }
         
@@ -19,6 +19,14 @@ pipeline {
             echo 'checkout done'
             }
           }  
+          
+     stage('SonarQube Analysis') {
+             withSonarQubeEnv('sonar') { 
+                 steps {
+                       sh 'mvn sonar:sonar'
+        }
+    }
+    }
         
          stage ('Build') {
             steps {

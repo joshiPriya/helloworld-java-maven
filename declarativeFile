@@ -32,8 +32,25 @@ pipeline {
                     }   
             }
         }
+        
+         stage('Deliver after sonarqube analysis') {
+            when {
+                branch 'newb'
+            }
+            steps {
+                
+                sh 'mvn deploy' 
+            
+            }
+        }
+        
+         stage('post check') { 
+            steps { 
+               echo 'Al done' 
+            }
+        }
           
-     stage('SonarQube Analysis') {
+ /*    stage('SonarQube Analysis') {
             steps {
              withSonarQubeEnv('sonar') { 
                  
@@ -42,13 +59,13 @@ pipeline {
                     }   
        
     }
-    }
+    } 
         
          stage ('Build') {
             steps {
                 sh 'mvn deploy' 
             }
-          }
+          } */
           }
     }
 

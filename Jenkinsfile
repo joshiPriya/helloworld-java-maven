@@ -16,6 +16,6 @@ node {
 stage('compile-package')
 {
  def mvnhome = tool name: 'maven3', type: 'maven'	
- sh "${mvnhome}/bin/mvn clean install"
+ sh "${mvnhome}/bin/mvn clean package docker:build"
 }
 }

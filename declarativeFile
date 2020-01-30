@@ -3,6 +3,7 @@ pipeline {
     tools { 
         maven 'maven3' 
         jdk 'java' 
+		sonarqube 'sonar'
     }
     
    
@@ -19,29 +20,52 @@ pipeline {
             echo 'checkout done'
             }
           }  
-          
-          stage('Deliver before deployment-sonarqube analysis') {
-            when {
-                branch 'fea1'
-            }
+		  
+		  stage ('Compile Stage') {
+
             steps {
-                 withSonarQubeEnv('sonar') { 
+                
+                    sh 'mvn compile'
+                }
+            }
+			
+			stage ('Testing Stage') {
+
+            steps {
+                
+                    sh 'mvn test'
+                }
+            
+        }
+		
+		stage ('build Stage') {
+
+            steps {
+                
+                    sh 'mvn test'
+                }
+            
+        }
+		
+		stage('sonarqube analysis') {
+            steps {
+                 
                  
                        sh 'mvn sonar:sonar'
                        
-                    }   
+                     
             }
         }
         
-         stage('Deliver after sonarqube analysis') {
-            when {
-                branch 'newb'
-            }
+          
+          
+        stage ('deploy Stage artifact to nexus') {
+
             steps {
                 
-                sh 'mvn deploy' 
+                    sh 'mvn deploy'
+                }
             
-            }
         }
         
          stage('post check') { 
@@ -50,22 +74,6 @@ pipeline {
             }
         }
           
- /*    stage('SonarQube Analysis') {
-            steps {
-             withSonarQubeEnv('sonar') { 
-                 
-                       sh 'mvn sonar:sonar'
-                       
-                    }   
-       
-    }
-    } 
-        
-         stage ('Build') {
-            steps {
-                sh 'mvn deploy' 
-            }
-          } */
+ 
           }
     }
-

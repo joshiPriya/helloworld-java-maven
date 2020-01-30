@@ -49,6 +49,7 @@
         </plugin>
     
 	</plugins>
+	<finalName>hellow-world-docker-maven</finalName>  
 	 
 </build>
 	

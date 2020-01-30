@@ -15,8 +15,8 @@ pipeline {
         
       stage('code checkout') {
             steps {
-            checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/joshiPriya/helloworld-java-maven.git']]])
-            echo 'checkout done for master'
+            git 'https://github.com/joshiPriya/helloworld-java-maven.git'
+            echo 'checkout done'
             }
           }  
 		  

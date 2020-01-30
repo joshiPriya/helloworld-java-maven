@@ -3,7 +3,7 @@ pipeline {
     tools { 
         maven 'maven3' 
         jdk 'java' 
-		sonarqube 'sonar'
+
     }
     
    
@@ -42,20 +42,21 @@ pipeline {
 
             steps {
                 
-                    sh 'mvn test'
+                    sh 'mvn install'
                 }
             
         }
 		
-		stage('sonarqube analysis') {
-            steps {
-                 
+stage('Deliver before deployment-sonarqube analysis') {
+         
+          steps {
+                 withSonarQubeEnv('sonar') { 
                  
                        sh 'mvn sonar:sonar'
                        
-                     
+                    }   
             }
-        }
+        }		
         
           
           

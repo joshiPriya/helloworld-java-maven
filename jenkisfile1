@@ -1,0 +1,72 @@
+pipeline { 
+    agent any  
+    tools { 
+        maven 'maven3' 
+        jdk 'java' 
+    }
+    
+   
+    stages { 
+        stage('check') { 
+            steps { 
+               echo 'Initial check' 
+            }
+        }
+        
+      stage('code checkout') {
+            steps {
+            git 'https://github.com/joshiPriya/helloworld-java-maven.git'
+            echo 'checkout done'
+            }
+          }  
+		  
+		  
+          
+          stage('Deliver before deployment-sonarqube analysis') {
+            when {
+                branch 'fea1'
+            }
+            steps {
+                 withSonarQubeEnv('sonar') { 
+                 
+                       sh 'mvn sonar:sonar'
+                       
+                    }   
+            }
+        }
+        
+         stage('Deliver after sonarqube analysis') {
+            when {
+                branch 'newb'
+            }
+            steps {
+                
+                sh 'mvn deploy' 
+            
+            }
+        }
+        
+         stage('post check') { 
+            steps { 
+               echo 'Al done' 
+            }
+        }
+          
+ /*    stage('SonarQube Analysis') {
+            steps {
+             withSonarQubeEnv('sonar') { 
+                 
+                       sh 'mvn sonar:sonar'
+                       
+                    }   
+       
+    }
+    } 
+        
+         stage ('Build') {
+            steps {
+                sh 'mvn deploy' 
+            }
+          } */
+          }
+    }

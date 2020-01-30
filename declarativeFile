@@ -16,7 +16,7 @@ pipeline {
       stage('code checkout') {
             steps {
             git 'https://github.com/joshiPriya/helloworld-java-maven.git'
-            echo 'checkout done'
+            echo 'checkout done no branch specified'
             }
           }  
           

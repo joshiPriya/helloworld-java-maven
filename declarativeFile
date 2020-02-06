@@ -60,7 +60,7 @@ stage('Deliver before deployment-sonarqube analysis') {
         
           
           
-        stage ('deploy Stage artifact to nexus') {
+  /*      stage ('deploy Stage artifact to nexus') {
 
             steps {
                 
@@ -73,7 +73,7 @@ stage('Deliver before deployment-sonarqube analysis') {
             steps { 
                echo 'Al done' 
             }
-        }
+        } */
           
  
           }

@@ -11,7 +11,7 @@ node {
 stage('compile-package')
 {
  def mvnhome = tool name: 'maven3', type: 'maven'	
- sh "${mvnhome}/mvn clean"
+ sh "${mvnhome}/bin/mvn clean"
 }
 	
 	stage('SonarQube Analysis') {

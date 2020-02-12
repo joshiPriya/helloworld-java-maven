@@ -60,13 +60,13 @@
 	<repository>
 		<id>ppesscrumuser</id>
 		<name>maven release repo</name>
-		<url>http://10.100.90.206:8081/repository/Sample-nexus-web-jar-deploy/</url>
+		<url>http://10.100.90.36:8081/repository/maven-release-repo/</url>
 	</repository>
  
  	<snapshotRepository>
 		<id>ppesscrumuser1</id>
 		<name>Internal Releases</name>
-		<url>http://10.100.90.206:8081/repository/maven-snapshot/</url>
+		<url>http://10.100.90.36:8081/repository/maven-snapshot-repo/</url>
 	</snapshotRepository> 
 
 </distributionManagement> 

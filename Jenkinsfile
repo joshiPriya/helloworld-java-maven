@@ -8,15 +8,15 @@ node {
 	git 'https://github.com/joshiPriya/helloworld-java-maven.git'
 }
 
-/*stage('compile-package')
+stage('compile-package')
 {
  def mvnhome = tool name: 'maven3', type: 'maven'	
  sh "${mvnhome}/bin/mvn package"
-} */
+} 
 	
 stage('SLAnalyze') {
     dir("/var/lib/jenkins/workspace/shiftleft-pipeline") {
-        sh '/usr/local/bin/sl analyze --app helloworld-java-maven --java --cpg'
+        sh '/usr/local/bin/sl analyze --app helloworld-java-maven --java /tarhet/hellow-world-docker-maven.jar'
     }
 }	
 	

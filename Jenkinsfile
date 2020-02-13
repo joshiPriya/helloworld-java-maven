@@ -11,10 +11,10 @@ node {
 stage('compile-package')
 {
  def mvnhome = tool name: 'maven3', type: 'maven'	
- sh "${mvnhome}/bin/mvn clean"
+ sh "${mvnhome}/bin/mvn package"
 }
 	
-	stage('SonarQube Analysis') {
+/*	stage('SonarQube Analysis') {
   def mvnHome =  tool name: 'maven3', type: 'maven'
   withSonarQubeEnv('sonar') { 
   sh "${mvnHome}/bin/mvn sonar:sonar"
@@ -23,6 +23,6 @@ stage('compile-package')
 stage('ssh'){
 sshPublisher(publishers: [sshPublisherDesc(configName: 'docker-host', transfers: [sshTransfer(cleanRemote: false, excludes: '', execCommand: 'cd /home/dockeradmin/docker;docker build -t myimage .', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '//home//dockeradmin//docker', remoteDirectorySDF: false, removePrefix: 'target', sourceFiles: 'target/*.jar')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
 
-}	
+}	/*
 	
 }

@@ -8,11 +8,11 @@ node {
 	git 'https://github.com/joshiPriya/helloworld-java-maven.git'
 }
 
-stage('compile-package')
+/*stage('compile-package')
 {
  def mvnhome = tool name: 'maven3', type: 'maven'	
  sh "${mvnhome}/bin/mvn package"
-}
+} */
 	
 stage('SLAnalyze') {
     dir("/var/lib/jenkins/workspace/shiftleft-pipeline") {

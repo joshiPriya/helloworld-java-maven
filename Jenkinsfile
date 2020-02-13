@@ -14,6 +14,12 @@ stage('compile-package')
  sh "${mvnhome}/bin/mvn package"
 }
 	
+stage('SLAnalyze') {
+    dir("/var/lib/jenkins/workspace/shiftleft-pipeline/target/") {
+        sh '/usr/local/bin/sl analyze --app helloworld-java-maven --java target/hellow-world-docker-maven-javadoc.jar'
+    }
+}	
+	
 /*	stage('SonarQube Analysis') {
   def mvnHome =  tool name: 'maven3', type: 'maven'
   withSonarQubeEnv('sonar') { 

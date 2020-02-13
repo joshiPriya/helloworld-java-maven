@@ -16,7 +16,7 @@ stage('compile-package')
 	
 stage('SLAnalyze') {
     dir("/var/lib/jenkins/workspace/shiftleft-pipeline") {
-        sh '/usr/local/bin/sl analyze --app helloworld-java-maven --java /target/hellow-world-docker-maven.jar'
+        sh '/usr/local/bin/sl analyze --app helloworld-java-maven --java target/hellow-world-docker-maven.jar'
     }
 }	
 	

@@ -11,14 +11,20 @@ node {
 stage('compile-package')
 {
  def mvnhome = tool name: 'maven3', type: 'maven'	
- sh "${mvnhome}/bin/mvn package"
+ sh "${mvnhome}/bin/mvn clean verify"
+} 	
+
+stage('compile-package')
+{
+ def mvnhome = tool name: 'maven3', type: 'maven'	
+ sh "${mvnhome}/bin/mvn package -Dmaven.test.skip=true"
 } 
 	
-stage('SLAnalyze') {
+/*stage('SLAnalyze') {
     dir("/var/lib/jenkins/workspace/shiftleft-pipeline") {
         sh '/usr/local/bin/sl analyze --app helloworld-java-maven --java target/hellow-world-docker-maven.jar'
     }
-}	
+} */	
 	
 /*	stage('SonarQube Analysis') {
   def mvnHome =  tool name: 'maven3', type: 'maven'
